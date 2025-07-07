@@ -31,3 +31,70 @@ public class WebClientConfig {
     }
 }
 
+
+
+
+// package mpesa.com.spring.project.filter;
+
+// import mpesa.com.spring.project.service.UrlShortenerService;
+// import org.springframework.beans.factory.annotation.Value;
+// import org.springframework.stereotype.Component;
+// import javax.servlet.*;
+// import javax.servlet.http.HttpServletRequest;
+// import javax.servlet.http.HttpServletResponse;
+// import java.io.IOException;
+
+// @Component
+// public class UrlRedirectFilter implements Filter {
+
+//     private final UrlShortenerService urlShortenerService;
+//     private final String domainPattern;
+//     private final int shortCodeLength;
+
+//     public UrlRedirectFilter(UrlShortenerService urlShortenerService,
+//                            @Value("${url.shortener.domain.pattern}") String domainPattern,
+//                            @Value("${url.shortener.code.length}") int shortCodeLength) {
+//         this.urlShortenerService = urlShortenerService;
+//         this.domainPattern = domainPattern;
+//         this.shortCodeLength = shortCodeLength;
+//     }
+
+//     @Override
+//     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) 
+//             throws IOException, ServletException {
+        
+//         HttpServletRequest httpRequest = (HttpServletRequest) request;
+//         String path = httpRequest.getRequestURI().substring(httpRequest.getContextPath().length());
+        
+//         if (isShortUrlPath(path)) {
+//             String shortCode = path.substring(1);
+//             String longUrl = urlShortenerService.expand(shortCode);
+            
+//             if (longUrl != null) {
+//                 ((HttpServletResponse) response).sendRedirect(longUrl);
+//                 return;
+//             } else {
+//                 ((HttpServletResponse) response).sendError(HttpServletResponse.SC_NOT_FOUND);
+//                 return;
+//             }
+//         }
+        
+//         chain.doFilter(request, response);
+//     }
+
+//     private boolean isShortUrlPath(String path) {
+//         return path.matches(domainPattern);
+//     }
+
+//     @Override
+//     public void init(FilterConfig filterConfig) throws ServletException {
+//         log.info("Initializing UrlRedirectFilter with:");
+//         log.info("Domain pattern: {}", domainPattern);
+//         log.info("Short code length: {}", shortCodeLength);
+//     }
+
+//     @Override
+//     public void destroy() {
+//         // Cleanup if needed
+//     }
+// }
