@@ -98,3 +98,8 @@ public class WebClientConfig {
 //         // Cleanup if needed
 //     }
 // }
+
+// # URL Shortener Configuration
+// url.shortener.domain.pattern=/[a-zA-Z0-9]{8}
+// url.shortener.code.length=8
+// url.shortener.base-domain=http://sho.rt
