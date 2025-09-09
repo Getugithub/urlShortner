@@ -1,4 +1,14 @@
-package mpesa.com.spring.project.controller;
+{
+
+    "refresh_token": "vlD4GNaVWC7ir5p581MvXv167GkRamh2",
+
+    "token_type": "bearer",
+
+    "access_token": "BaB62ZQbYrVdsYVNq3feHGUvdO6Goxmu",
+
+    "expires_in": 7200
+
+}package mpesa.com.spring.project.controller;
 
 
 import lombok.RequiredArgsConstructor;
